@@ -1,5 +1,6 @@
 package me.mrCookieSlime.CSCoreLibPlugin.general.Inventory;
 
+import org.bukkit.event.inventory.ClickType;
 import org.bukkit.event.inventory.InventoryClickEvent;
 
 /**
@@ -22,7 +23,7 @@ public class ClickAction {
     public ClickAction(InventoryClickEvent e) {
         this.right = e.isRightClick();
         this.shift = e.isShiftClick();
-        this.numberKey = e.getClick().name().equals("NUMBER_KEY");
+        this.numberKey = e.getClick() == ClickType.NUMBER_KEY;
     }
 
     public boolean isRightClicked() {
